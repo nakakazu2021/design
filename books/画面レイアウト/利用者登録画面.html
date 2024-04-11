@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用者登録</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>利用者登録</h2>
+        <div class="btn-container">
+            <a href="./司書メニュー画面.html" class="btn">戻る</a>
+            <a href="#" class="btn">登録</a>
+        </div>
+        <form id="user-form">
+            <div class="form-group">
+                <label for="userId">ユーザID</label>
+                <input type="text" id="userId" name="userId">
+            </div>
+            <div class="form-group">
+                <label for="department">部署名</label>
+                <select id="department" name="department">
+                    <option value="">--選択してください--</option>
+                    <option value="部署A">部署A</option>
+                    <option value="部署B">部署B</option>
+                    <option value="部署C">部署C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="userName">利用者名</label>
+                <input type="text" id="userName" name="userName">
+            </div>
+            <div class="form-group">
+                <label for="email">メールアドレス</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

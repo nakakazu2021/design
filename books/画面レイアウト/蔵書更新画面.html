@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔵書更新</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .add-row-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+        .delete-row-btn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>蔵書更新</h2>
+        <div class="btn-container">
+            <a href="./蔵書一覧検索画面（司書）.html" class="btn">戻る</a>
+            <a href="#" class="btn">更新</a>
+        </div>
+        <form id="book-form">
+            <div class="form-group">
+                <label for="category">図書カテゴリ</label>
+                <select id="category" name="category">
+                    <option value="小説">小説</option>
+                    <option value="ビジネス">ビジネス</option>
+                    <option value="歴史">歴史</option>
+                    <option value="自然">自然</option>
+                    <!-- 他のカテゴリを追加 -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">図書名</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="author">著者</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="form-group">
+                <label for="publisher">出版社</label>
+                <input type="text" id="publisher" name="publisher">
+            </div>
+            <div class="form-group">
+                <label for="isbn">ISBNコード</label>
+                <input type="text" id="isbn" name="isbn">
+            </div>
+        </form>
+        <h3>蔵書の枝情報</h3>
+        <table id="branch-info-table">
+            <thead>
+                <tr>
+                    <th>蔵書子番号</th>
+                    <th>提供者</th>
+                    <th>保管場所</th>
+                    <th>貸出状況</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 行追加・削除用の空の行 -->
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <button class="btn" id="add-row-btn">行追加</button>
+            <button class="btn" id="delete-row-btn">行削除</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const addRowButton = document.getElementById("add-row-btn");
+            const deleteRowButton = document.getElementById("delete-row-btn");
+            const branchInfoTableBody = document.querySelector("#branch-info-table tbody");
+
+            addRowButton.addEventListener("click", function() {
+                const newRow = `
+                    <tr>
+                        <td contenteditable="true"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option value="1">保管場所1</option>
+                                <option value="2">保管場所2</option>
+                                <option value="3">保管場所3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                                <option value="1">貸出可能</option>
+                                <option value="2">貸出中</option>
+                                <option value="3">準備中</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="delete-row-btn">削除</button>
+                        </td>
+                    </tr>
+                `;
+                branchInfoTableBody.insertAdjacentHTML("beforeend", newRow);
+            });
+
+            branchInfoTableBody.addEventListener("click", function(event) {
+                if (event.target.classList.contains("delete-row-btn")) {
+                    const row = event.target.closest("tr");
+                    row.remove();
+                }
+            });
+
+            deleteRowButton.addEventListener("click", function() {
+                const rows = branchInfoTableBody.querySelectorAll("tr");
+                if (rows.length > 0) {
+                    rows[rows.length - 1].remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

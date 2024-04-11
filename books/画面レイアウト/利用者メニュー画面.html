@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用者メニュー</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .menu-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .menu-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .user-info {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .user-info span {
+            font-weight: bold;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .announcement-container {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h2 class="menu-header">利用者メニュー</h2>
+        <div class="user-info">
+            <span>ログインユーザ名: John Doe</span> <!-- ここにログインユーザ名を表示 -->
+            <a href="./ログイン画面.html" class="button">ログアウト</a> <!-- ログアウトボタン -->
+        </div>
+        <div class="button-container">
+            <a href="./蔵書一覧検索画面.html" class="button">蔵書一覧検索</a>
+            <a href="./マイページ.html" class="button">マイページ</a>
+        </div>
+        <div class="announcement-container">
+            <h3>お知らせ情報一覧</h3>
+            <!-- ここにお知らせ情報を表示（垂直方向にスライドバーがついている） -->
+            <p>2024年4月10日: 蔵書一覧に新しい書籍が追加されました。</p>
+            <p>2024年4月8日: メンテナンスのお知らせです。システムは4月12日に一時停止します。</p>
+            <p>2024年4月5日: マイページがリニューアルされました。新しい機能が追加されました。</p>
+            <p>2024年4月1日: ゴールデンウィーク期間中の営業時間のお知らせです。</p>
+            <p>2024年3月28日: ご利用の皆様へのアンケートのお知らせです。ご協力をお願いします。</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ管理</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>お知らせ管理</h2>
+        <div class="btn-container">
+            <a href="./司書メニュー画面.html" class="btn">戻る</a>
+            <button id="updateBtn" class="btn">更新</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>お知らせID</th>
+                    <th>開始日</th>
+                    <th>終了日</th>
+                    <th>お知らせメッセージ</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="announcementTableBody">
+                <!-- 初期行 -->
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="date"></td>
+                    <td><input type="date"></td>
+                    <td><input type="text"></td>
+                    <td><button class="delete-row-btn">削除</button></td>
+                </tr>
+                <!-- 他のお知らせを追加 -->
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <button id="addRowButton" class="btn">行追加</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const addRowButton = document.getElementById("addRowButton");
+            const announcementTableBody = document.getElementById("announcementTableBody");
+
+            addRowButton.addEventListener("click", function() {
+                const newRow = `
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="date"></td>
+                        <td><input type="date"></td>
+                        <td><input type="text"></td>
+                        <td><button class="delete-row-btn">削除</button></td>
+                    </tr>
+                `;
+                announcementTableBody.insertAdjacentHTML("beforeend", newRow);
+            });
+
+            announcementTableBody.addEventListener("click", function(event) {
+                if (event.target.classList.contains("delete-row-btn")) {
+                    const row = event.target.closest("tr");
+                    row.remove();
+                }
+            });
+
+            const updateBtn = document.getElementById("updateBtn");
+            updateBtn.addEventListener("click", function() {
+                // 更新処理
+                console.log("お知らせを更新しました。");
+            });
+        });
+    </script>
+</body>
+</html>

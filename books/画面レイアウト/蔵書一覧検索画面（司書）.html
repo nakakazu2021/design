@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図書検索一覧</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .search-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .search-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-form label {
+            font-weight: bold;
+            width: 100%;
+        }
+        .search-form input[type="text"],
+        .search-form select {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: calc(48% - 5px);
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .search-form input[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            width: calc(100% - 5px);
+        }
+        .result-container {
+            margin-top: 20px;
+        }
+        .book-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .book-list th, .book-list td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .book-list th {
+            background-color: #f2f2f2;
+        }
+        .book-list tr:hover {
+            background-color: #f9f9f9;
+        }
+        .book-list .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .book-list .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h2 class="search-header">蔵書一覧</h2>
+        <div class="button-container">
+            <a href="./司書メニュー画面.html" class="button">戻る</a>
+        </div>
+        <form class="search-form" action="#" method="get">
+            <label for="category">図書カテゴリ:</label>
+            <select name="category" id="category">
+                <option value="">全て</option>
+                <option value="小説">小説</option>
+                <option value="ビジネス">ビジネス</option>
+                <option value="科学">科学</option>
+                <option value="歴史">歴史</option>
+            </select>
+            <label for="title">図書名:</label>
+            <input type="text" id="title" name="title">
+            <label for="author">著者名:</label>
+            <input type="text" id="author" name="author">
+            <label for="status">貸出状況:</label>
+            <select name="status" id="status">
+                <option value="">全て</option>
+                <option value="貸出可">貸出可</option>
+                <option value="貸出中">貸出中</option>
+                <option value="貸出中">準備中</option>
+            </select>
+            <input type="submit" value="検索">
+        </form>
+        <div class="result-container">
+            <table class="book-list">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th></th>
+                        <th></th>
+                        <th>Like</th>
+                        <th>貸出状況</th>
+                        <th>図書名</th>
+                        <th>著者名</th>
+                        <th>出版社</th>
+                        <th>図書カテゴリ</th>
+                        <th>保管場所</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="./蔵書更新画面.html" class="btn">更新</a></td>
+                        <td><a href="./蔵書貸出履歴画面.html" class="btn">履歴</a></td>
+                        <td>10</td>
+                        <td>貸出可</td>
+                        <td>サンプル図書1</td>
+                        <td>サンプル著者1</td>
+                        <td>サンプル出版社1</td>
+                        <td>小説</td>
+                        <td>図書棚1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="./蔵書更新画面.html" class="btn">更新</a></td>
+                        <td><a href="./蔵書貸出履歴画面.html" class="btn">履歴</a></td>
+                        <td>5</td>
+                        <td>貸出中</td>
+                        <td>サンプル図書2</td>
+                        <td>サンプル著者2</td>
+                        <td>サンプル出版社2</td>
+                        <td>ビジネス</td>
+                        <td>図書棚2</td>
+                    </tr>
+                    <!-- ここに検索結果のデータを表示 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

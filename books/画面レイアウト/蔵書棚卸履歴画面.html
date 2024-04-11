@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔵書棚卸履歴</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>蔵書棚卸履歴</h2>
+        <div class="btn-container">
+            <a href="./司書メニュー画面.html" class="btn">戻る</a>
+        </div>
+        <div class="form-group">
+            <label for="inventoryMonth">棚卸年月</label>
+            <select id="inventoryMonth" name="inventoryMonth">
+                <option value="2024-04">2024年04月</option>
+                <option value="2024-03">2024年03月</option>
+                <option value="2024-02">2024年02月</option>
+                <!-- 他の月を追加 -->
+            </select>
+        </div>
+        <div class="btn-container">
+            <button id="searchBtn" class="btn">検索</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>図書ID</th>
+                    <th>図書枝番</th>
+                    <th>図書名</th>
+                    <th>著者</th>
+                    <th>出版社</th>
+                    <th>保管場所</th>
+                    <th>差異区分</th>
+                    <th>差異コメント</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryList">
+                <tr>
+                    <td>1</td>
+                    <td>12345</td>
+                    <td>サンプル図書1</td>
+                    <td>著者A</td>
+                    <td>出版社A</td>
+                    <td>書庫</td>
+                    <td>破損</td>
+                    <td>カバーに傷あり</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>67890</td>
+                    <td>サンプル図書2</td>
+                    <td>著者B</td>
+                    <td>出版社B</td>
+                    <td>書庫</td>
+                    <td>紛失</td>
+                    <td>見つからず</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用者履歴</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .book-details {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .book-details h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .book-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .book-details table th,
+        .book-details table td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .book-details table th {
+            background-color: #f2f2f2;
+        }
+        .btn-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .history-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .history-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .history-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history-list th,
+        .history-list td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+        .history-list th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-details">
+        <h2>利用者情報</h2>
+        <div class="button-container">
+            <a href="./利用者一覧検索画面.html" class="button">戻る</a>
+        </div>
+        <table>
+            <tr>
+                <th>ユーザID</th>
+                <td>user123</td>
+            </tr>
+            <tr>
+                <th>部署名</th>
+                <td>部署A</td>
+            </tr>
+            <tr>
+                <th>利用者名</th>
+                <td>田中太郎</td>
+            </tr>
+        </table>
+    </div>
+    <div class="book-details">
+        <h2>借り出し中図書の詳細情報</h2>
+        <table>
+            <tr>
+                <th>図書カテゴリ</th>
+                <td>小説</td>
+            </tr>
+            <tr>
+                <th>図書名</th>
+                <td>サンプル図書</td>
+            </tr>
+            <tr>
+                <th>著者名</th>
+                <td>サンプル著者</td>
+            </tr>
+            <tr>
+                <th>出版社</th>
+                <td>サンプル出版社</td>
+            </tr>
+            <tr>
+                <th>保管場所</th>
+                <td>図書棚1</td>
+            </tr>
+            <tr>
+                <th>借り出し日</th>
+                <td>2024年4月10日</td>
+            </tr>
+            <tr>
+                <th>返却期限</th>
+                <td>2024年4月30日</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="history-container">
+        <h3>図書利用履歴一覧</h3>
+        <table class="history-list">
+            <thead>
+                <tr>
+                    <th>履歴番号</th>
+                    <th>図書カテゴリ</th>
+                    <th>図書名</th>
+                    <th>著者名</th>
+                    <th>出版社</th>
+                    <th>借り出し日</th>
+                    <th>返却日</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>小説</td>
+                    <td>サンプル図書1</td>
+                    <td>サンプル著者1</td>
+                    <td>サンプル出版社1</td>
+                    <td>2024年3月20日</td>
+                    <td>2024年3月30日</td>
+                    <td>通常貸出</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>ビジネス</td>
+                    <td>サンプル図書2</td>
+                    <td>サンプル著者2</td>
+                    <td>サンプル出版社2</td>
+                    <td>2024年2月10日</td>
+                    <td>2024年2月20日</td>
+                    <td>予約貸出</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
